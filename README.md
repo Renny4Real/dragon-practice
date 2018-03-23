@@ -16,4 +16,8 @@ Run the tests
 bundle exec rspec
 ``` 
 
-...
+Start the server running at http://localhost:3000
+
+```shell
+bundle exec rails s
+```

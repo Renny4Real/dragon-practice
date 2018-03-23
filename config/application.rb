@@ -17,6 +17,9 @@ require "sprockets/railtie"
 Bundler.require(*Rails.groups)
 
 module SecretSquirrel
+  mattr_accessor :twitter_client
+  self.twitter_client = nil
+
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.1
