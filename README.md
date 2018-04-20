@@ -25,7 +25,7 @@ bundle exec rails s
 ## Exam
 
 * Don't use the existing tests as a guide. They have many flaws.
-* Please critique the existing tests.
+* Please read through, explain and critique the existing tests.
 * Please implement the following feature using TDD.
 * As you implement the feature, don't be afraid to improve the existing code.
 * You have 30 minutes.
