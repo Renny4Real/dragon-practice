@@ -3,7 +3,7 @@
 <ul>
 <% @sebs_tweets.each do |tweet| %>
     <li>
-      <strong><%= tweet.user.screen_name %></strong>: <span><%= tweet.text %></span>
+      <strong class="name"><%= tweet.user.screen_name %></strong>: <span><%= tweet.text %></span>
       <%= link_to("Save", "/chirp/save/#{tweet.id}", method: "post") %>
     </li>
 <% end %>
