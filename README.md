@@ -27,6 +27,7 @@ bundle exec rails s
 * Don't use the existing tests as a guide. They have many flaws.
 * Please critique the existing tests.
 * Please implement the following feature using TDD.
+* As you implement the feature, don't be afraid to improve the existing code.
 * You have 30 minutes.
 * You will be tested against the [mark scheme][mark-scheme] (you should have read this.)
 
@@ -37,6 +38,13 @@ bundle exec rails s
 As a keen follower of Seb's tweets I've got software which archives the best.
 
 Please implement a feature which lets me see the previously saved tweets.
+
+And also see if a tweet has been deleted since you saved it.
+
+```ruby
+[2] pry(main)> twitter_client.status(1234123123123123)
+Twitter::Error::NotFound: No status found with that ID.
+```
 
 Remember you are being challenged to use your ability to TDD,
 NOT your ability to write Rails or implement features.
