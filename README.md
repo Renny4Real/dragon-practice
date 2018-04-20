@@ -28,7 +28,6 @@ bundle exec rails s
 * Please read through, explain and critique the existing tests.
 * Please implement the following feature using TDD.
 * As you implement the feature, don't be afraid to improve the existing code.
-* You have 30 minutes.
 * You will be tested against the [mark scheme][mark-scheme] (you should have read this.)
 
 [mark-scheme]: https://docs.google.com/document/d/13AuqWeEx5FRWAFOpZrRFLL3OanDXLwjTW8yKZ9fXVN4/edit#
