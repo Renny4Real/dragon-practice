@@ -7,19 +7,20 @@ A simple Twitter application which has some problematic tests.
 Install
 
 ```shell
-bundle
+docker-compose build
+docker-compose run --rm app rails db:create db:migrate
 ```
 
 Run the tests
 
 ```shell
-bundle exec rspec
-``` 
+docker-compose run --rm app rspec
+```
 
-Start the server running at http://localhost:3000
+Start the server running at [http://localhost:3000](http://localhost:3000)
 
 ```shell
-bundle exec rails s
+docker-compose up
 ```
 
 ## Exam
