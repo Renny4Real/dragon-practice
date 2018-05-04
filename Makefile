@@ -1,5 +1,8 @@
+build:
+	docker-compose build
+
 test:
-	bundle exec rspec
+	docker-compose run --rm app rspec
 
 serve:
-	bundle exec rails s
+	docker-compose up
