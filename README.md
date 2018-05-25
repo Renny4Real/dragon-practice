@@ -48,6 +48,8 @@ As a keen follower of Seb's tweets I've got software which archives the best as 
 Please implement a feature using TDD which lets me see the previously saved
 Chirps.
 
+Once you have showcased this slice, the customer would like to see pagination.
+
 ## Wolf course
 
 As a data hoarder I want to know when a Chirp has been removed from Twitter.
