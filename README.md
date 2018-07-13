@@ -46,7 +46,7 @@ progress between each course by pushing your progress to a branch, e.g.
 As a keen follower of Seb's tweets I've got software which archives the best as a Chirp.
 
 Please implement a feature using TDD which lets me see the previously saved
-Chirps.  See `app/service/get_chrips.rb` for a suggested entry point.
+Chirps.  See `app/service/get_chirps.rb` for a suggested entry point.
 
 Once you have showcased this slice, the customer would like to see pagination.
 
