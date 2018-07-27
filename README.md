@@ -39,7 +39,7 @@ The three courses below build upon each other.  You need to back up your
 progress between each course by pushing your progress to a branch, e.g.
 `adrian-giraffe` to Github.
 
-[mark-scheme]: https://docs.google.com/document/d/13AuqWeEx5FRWAFOpZrRFLL3OanDXLwjTW8yKZ9fXVN4/edit#
+[mark-scheme]: https://learn.madetech.com/core-skills/tdd/
 
 ## Giraffe course
 
