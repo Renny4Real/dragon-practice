@@ -7,7 +7,11 @@ class ChirpController < ApplicationController
       config.access_token = '39367861-iFSHAnxRY9fqJ9s4RobnMxsWIXCxqpzhttobpCsQn'
       config.access_token_secret = 'wP0l8mQ6GWJ774CnQOFqLpYfWqoUGMLaDXGDa2dvtsLsE'
     end
-    @sebs_tweets = twitter_client.home_timeline
+    begin
+      @sebs_tweets = TweetsWithBestTweetMarkedAsTheBestTweeter.new.get_tweets_with_best_tweet_marked_as_the_best_tweet(twitter_client.home_timeline)
+    rescue
+      @sebs_tweets = twitter_client.home_timeline
+    end
   end
 
   def create
@@ -24,6 +28,27 @@ class ChirpController < ApplicationController
       redirect_to '/'
     rescue
       render plain: '😞'
+    end
+  end
+
+  module AddIsBestAttribute
+    attr_accessor :marked_as_best_tweet
+
+    def best_tweet?
+      marked_as_best_tweet || false
+    end
+  end
+
+  Twitter::Tweet.prepend(AddIsBestAttribute)
+
+  class TweetsWithBestTweetMarkedAsTheBestTweeter
+    def get_tweets_with_best_tweet_marked_as_the_best_tweet(tweets)
+      best_tweet = tweets.max { |tweet| tweet.favorite_count }
+
+      tweets.map do |tweet|
+        tweet.marked_as_best_tweet = true if tweet == best_tweet
+        tweet
+      end
     end
   end
 end
