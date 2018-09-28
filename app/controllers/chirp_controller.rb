@@ -43,7 +43,7 @@ class ChirpController < ApplicationController
 
   class TweetsWithBestTweetMarkedAsTheBestTweeter
     def get_tweets_with_best_tweet_marked_as_the_best_tweet(tweets)
-      best_tweet = tweets.max { |tweet| tweet.favorite_count }
+      best_tweet = tweets.sort_by(&:favorite_count).last
 
       tweets.map do |tweet|
         tweet.marked_as_best_tweet = true if tweet == best_tweet
