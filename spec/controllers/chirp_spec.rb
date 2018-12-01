@@ -75,4 +75,60 @@ describe ChirpController do
       expect(response.body).to include('😞')
     end
   end
+
+  describe 'best tweet' do
+    let(:best) { ChirpController::TweetsWithBestTweetMarkedAsTheBestTweeter.new }
+    
+    class TweetOneStub
+      def favorite_count
+        1
+      end
+
+      def marked_as_best_tweet
+        @x
+      end
+
+      def marked_as_best_tweet=(x)
+        @x = x
+      end
+    end
+
+    class TweetTwoStub
+      def favorite_count
+        11
+      end
+
+      def marked_as_best_tweet
+        @x
+      end
+
+      def marked_as_best_tweet=(x)
+        @x = x
+      end
+    end
+
+    class TweetThreeStub
+      def favorite_count
+        5
+      end
+
+      def marked_as_best_tweet
+        @x
+      end
+
+      def marked_as_best_tweet=(x = false)
+        @x = x
+      end
+    end
+
+    it 'returns the best tweet' do
+      tweet_1, tweet_2, tweet_3 = TweetOneStub.new, TweetTwoStub.new, TweetThreeStub.new
+      #tweet_1.marked_as_best_tweet, tweet_2.marked_as_best_tweet, tweet_3.marked_as_best_tweet = false
+      tweets = [tweet_1, tweet_2, tweet_3]
+      best.get_tweets_with_best_tweet_marked_as_the_best_tweet(tweets)
+      expect(tweet_2.marked_as_best_tweet).to eq(true)
+      expect(tweet_1.marked_as_best_tweet).to eq(false)
+      expect(tweet_3.marked_as_best_tweet).to eq(false)
+    end
+  end
 end
